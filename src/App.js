@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+// import ReactDOM  from 'react-dom';
+import Slot from './SlotMach'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+setInterval(() => {
+    let arr=['blue','red','green','aqua','yellow'];
+     document.querySelector(".color").style.color=arr[Math.floor(Math.random()*arr.length)];
+},500);
+
+const App = () => {
+    return (
+        <>
+            <h1 className='heading'> 🎰 This is <span className='color'>Slot Machine Game</span> 🎰 </h1>
+            <div className='Slot-box'>
+                <Slot x='😄' y='😄' z='😄' />
+                <Slot x='😸' y='😻' z='😃' />
+                <Slot x='💓' y='💓' z="💓" />
+            </div>
+            
+        </>
+    )
+
 }
 
 export default App;
